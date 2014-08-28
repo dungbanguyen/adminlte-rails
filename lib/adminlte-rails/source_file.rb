@@ -40,9 +40,9 @@ class SourceFile < Thor
     self.destination_root = 'vendor/assets'
     inside destination_root do
       #gsub_file 'stylesheets/bootstrap.scss', %r/url\(([^\)]*)\)/, 'image-url(\1)'
-      gsub_file 'stylesheets/bootstrap.scss', %r/url\('(\.\.\/fonts\/)([^\)]*)'\)/, 'url(font-path(\2))'
-      gsub_file 'stylesheets/font-awesome.scss', %r/url\('(\.\.\/fonts\/)([^\)]*)'\)/, 'url(font-path(\2))'
-      gsub_file 'stylesheets/ionicons.scss', %r/url\("(\.\.\/fonts\/)([^\)]*)"\)/, 'url(font-path(\2))'
+      gsub_file 'stylesheets/bootstrap.scss', %r/url\('(\.\.\/fonts\/)([^\)]*)'\)/, 'url(font-path(\'\2\'))'
+      gsub_file 'stylesheets/font-awesome.scss', %r/url\('(\.\.\/fonts\/)([^\)]*)'\)/, 'url(font-path(\'\2\'))'
+      gsub_file 'stylesheets/ionicons.scss', %r/url\("(\.\.\/fonts\/)([^\)]*)"\)/, 'url(font-path(\'\2\'))'
     end
   end
 
