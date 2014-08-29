@@ -14,7 +14,7 @@ Hotfix:
 
 Features:
 
-  - Updating tool pulls latest release from [AdminLTE](http://www.almsaeedstudio.com/) `/lib/adminlte-rails/source_file`.
+  - Updating tool pulls latest release from [AdminLTE](https://github.com/almasaeed2010/AdminLTE) `/lib/adminlte-rails/source_file.rb`.
   - Support iCheck controls (only flat style) .
   - Support datatables.
   - Convert font-face urls for Rails assets pipeline.
