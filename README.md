@@ -47,7 +47,7 @@ If you want to use additional features, add more these lines to your `app/assets
 
 ## Changelog
 
-View [CHANGELOG](CHANGELOG)
+View [CHANGELOG](CHANGELOG.md)
     
 ## License
 
