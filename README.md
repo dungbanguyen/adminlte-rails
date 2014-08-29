@@ -1,6 +1,8 @@
-# Adminlte::Rails
+# AdminLTE Rails gem
 
-TODO: Write a gem description
+[AdminLTE](http://www.almsaeedstudio.com/) is a premium Bootstrap theme for backend.
+
+The **AdminLTE Rails** gem integrates **AdminLTE** theme with the Rails asset pipeline.
 
 ## Installation
 
@@ -18,7 +20,38 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+### Include adminlte-rails javascript assets
+
+Add the following to your `app/assets/javascripts/application.js`:
+
+	//= require bootstrap.min
+	//= require admin-lte
+	
+### Include adminlte-rails stylesheet assets
+
+Add the following to your `app/assets/stylesheets/application.css`:
+
+	 *= require bootstrap
+     *= require font-awesome
+     *= require ionicons
+     *= require admin-lte
+     
+If you want to use additional features, add more these lines to your `app/assets/stylesheets/application.css`:
+
+     *= require iCheck/all
+     *= require datatables/dataTables.bootstrap
+     
+## Version
+
+1.3.2 (AdminLTE 1.3.0)
+
+## Changelog
+
+
+    
+## License
+
+AdminLTE-Rails is released under the [MIT License](http://www.opensource.org/licenses/MIT).
 
 ## Contributing
 
