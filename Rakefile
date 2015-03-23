@@ -6,7 +6,6 @@ task :update do
   files = SourceFile.new
   files.cleanup
   files.fetch
-  files.convert
 end
 
 task :convert do
