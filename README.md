@@ -1,5 +1,7 @@
 # AdminLTE Rails gem
 
+[![Join the chat at https://gitter.im/shine60vn/adminlte-rails](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/shine60vn/adminlte-rails?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 [AdminLTE](http://www.almsaeedstudio.com/) is a premium Bootstrap theme for backend.
 
 The **AdminLTE Rails** gem integrates **AdminLTE** theme with the Rails asset pipeline.
