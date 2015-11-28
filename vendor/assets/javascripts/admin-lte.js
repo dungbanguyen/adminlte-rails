@@ -7,7 +7,7 @@
  * @Author  Almsaeed Studio
  * @Support <http://www.almsaeedstudio.com>
  * @Email   <support@almsaeedstudio.com>
- * @version 2.1.2
+ * @version 2.3.0
  * @license MIT <http://opensource.org/licenses/MIT>
  */
 
@@ -140,6 +140,11 @@ $.AdminLTE.options = {
  * options above.
  */
 $(function () {
+  "use strict";
+
+  //Fix for IE page transitions
+  $("body").removeClass("hold-transition");
+
   //Extend options if external options exist
   if (typeof AdminLTEOptions !== "undefined") {
     $.extend(true,
@@ -197,7 +202,7 @@ $(function () {
 
   //Activate direct chat widget
   if (o.directChat.enable) {
-    $(o.directChat.contactToggleSelector).on('click', function () {
+    $(document).on('click', o.directChat.contactToggleSelector, function () {
       var box = $(this).parents('.direct-chat').first();
       box.toggleClass('direct-chat-contacts-open');
     });
@@ -224,7 +229,7 @@ $(function () {
  * All AdminLTE functions are implemented below.
  */
 function _init() {
-
+  'use strict';
   /* Layout
    * ======
    * Fixes the layout height in case min-height fails.
@@ -279,8 +284,8 @@ function _init() {
           $(".sidebar").slimScroll({destroy: true}).height("auto");
         }
         return;
-      } else if (typeof $.fn.slimScroll == 'undefined' && console) {
-        console.error("Error: the fixed layout requires the slimscroll plugin!");
+      } else if (typeof $.fn.slimScroll == 'undefined' && window.console) {
+        window.console.error("Error: the fixed layout requires the slimscroll plugin!");
       }
       //Enable slimscroll for fixed layout
       if ($.AdminLTE.options.sidebarSlimScroll) {
@@ -317,9 +322,9 @@ function _init() {
         //Enable sidebar push menu
         if ($(window).width() > (screenSizes.sm - 1)) {
           if ($("body").hasClass('sidebar-collapse')) {
-              $("body").removeClass('sidebar-collapse').trigger('expanded.pushMenu');
+            $("body").removeClass('sidebar-collapse').trigger('expanded.pushMenu');
           } else {
-              $("body").addClass('sidebar-collapse').trigger('collapsed.pushMenu');
+            $("body").addClass('sidebar-collapse').trigger('collapsed.pushMenu');
           }
         }
         //Handle sidebar push menu for small screens
@@ -385,7 +390,7 @@ function _init() {
   $.AdminLTE.tree = function (menu) {
     var _this = this;
     var animationSpeed = $.AdminLTE.options.animationSpeed;
-    $("li a", $(menu)).on('click', function (e) {
+    $(document).on('click', menu + ' li a', function (e) {
       //Get the clicked link and the next element
       var $this = $(this);
       var checkElement = $this.next();
@@ -476,7 +481,6 @@ function _init() {
     },
     //Open the control sidebar
     open: function (sidebar, slide) {
-      var _this = this;
       //Slide over content
       if (slide) {
         sidebar.addClass('control-sidebar-open');
@@ -537,17 +541,17 @@ function _init() {
     animationSpeed: $.AdminLTE.options.animationSpeed,
     activate: function (_box) {
       var _this = this;
-      if (! _box) {
+      if (!_box) {
         _box = document; // activate all boxes per default
       }
       //Listen for collapse event triggers
-      $(_box).find(_this.selectors.collapse).on('click', function (e) {
+      $(_box).on('click', _this.selectors.collapse, function (e) {
         e.preventDefault();
         _this.collapse($(this));
       });
 
       //Listen for remove event triggers
-      $(_box).find(_this.selectors.remove).on('click', function (e) {
+      $(_box).on('click', _this.selectors.remove, function (e) {
         e.preventDefault();
         _this.remove($(this));
       });
@@ -603,6 +607,8 @@ function _init() {
  */
 (function ($) {
 
+  "use strict";
+
   $.fn.boxRefresh = function (options) {
 
     // Render options
@@ -613,8 +619,10 @@ function _init() {
       source: "",
       //Callbacks
       onLoadStart: function (box) {
+        return box;
       }, //Right after the button has been clicked
       onLoadDone: function (box) {
+        return box;
       } //When the source has been loaded
 
     }, options);
@@ -625,8 +633,8 @@ function _init() {
     return this.each(function () {
       //if a source is specified
       if (settings.source === "") {
-        if (console) {
-          console.log("Please specify a source first - boxRefresh()");
+        if (window.console) {
+          window.console.log("Please specify a source first - boxRefresh()");
         }
         return;
       }
@@ -677,6 +685,8 @@ function _init() {
  */
 (function ($) {
 
+  'use strict';
+
   $.fn.activateBox = function () {
     $.AdminLTE.boxWidget.activate(this);
   };
@@ -693,36 +703,44 @@ function _init() {
  */
 (function ($) {
 
+  'use strict';
+
   $.fn.todolist = function (options) {
     // Render options
     var settings = $.extend({
       //When the user checks the input
       onCheck: function (ele) {
+        return ele;
       },
       //When the user unchecks the input
       onUncheck: function (ele) {
+        return ele;
       }
     }, options);
 
     return this.each(function () {
 
       if (typeof $.fn.iCheck != 'undefined') {
-        $('input', this).on('ifChecked', function (event) {
+        $('input', this).on('ifChecked', function () {
           var ele = $(this).parents("li").first();
           ele.toggleClass("done");
           settings.onCheck.call(ele);
         });
 
-        $('input', this).on('ifUnchecked', function (event) {
+        $('input', this).on('ifUnchecked', function () {
           var ele = $(this).parents("li").first();
           ele.toggleClass("done");
           settings.onUncheck.call(ele);
         });
       } else {
-        $('input', this).on('change', function (event) {
+        $('input', this).on('change', function () {
           var ele = $(this).parents("li").first();
           ele.toggleClass("done");
-          settings.onCheck.call(ele);
+          if ($('input', ele).is(":checked")) {
+            settings.onCheck.call(ele);
+          } else {
+            settings.onUncheck.call(ele);
+          }
         });
       }
     });
