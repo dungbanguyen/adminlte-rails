@@ -24,26 +24,23 @@ Or install it yourself as:
 
 Add the following to your `app/assets/javascripts/application.js`:
 
-	//= require bootstrap.min
 	//= require admin-lte
 	
 ### Include adminlte-rails stylesheet assets
 
 Add the following to your `app/assets/stylesheets/application.css`:
 
-	 *= require bootstrap
-     *= require font-awesome
-     *= require ionicons
-     *= require admin-lte
+  *= require admin-lte
      
-If you want to use additional features, add more these lines to your `app/assets/stylesheets/application.css`:
+### Note: Admin-lte depends upon bootstrap but does ship with it. So you
+need to include bootstrap and other libraries yourself. If you want to use additional features, add those gem seperately:
 
-     *= require iCheck/all
-     *= require datatables/dataTables.bootstrap
+  * iCheck
+  * dataTables
      
 ## Version
 
-1.3.2 (AdminLTE 1.3.0)
+2.3.2 (AdminLTE 2.3.2)
 
 ## Changelog
 

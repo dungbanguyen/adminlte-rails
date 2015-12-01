@@ -1,3 +1,9 @@
+## 2.3.2
+ 
+Features:
+
+  - Updating tool pulls latest release of Adminlte v2.3.2
+
 ## 1.3.2
 
 Features:
