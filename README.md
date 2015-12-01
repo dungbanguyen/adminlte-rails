@@ -32,8 +32,11 @@ Add the following to your `app/assets/stylesheets/application.css`:
 
   *= require admin-lte
      
-### Note: Admin-lte depends upon bootstrap but does ship with it. So you
-need to include bootstrap and other libraries yourself. If you want to use additional features, add those gem seperately:
+### Note: 
+
+Admin-lte depends upon bootstrap but does ship with it. So you need to include bootstrap and other libraries yourself. 
+
+### If you want to use additional features, add those gem seperately:
 
   * iCheck
   * dataTables
