@@ -24,14 +24,15 @@ Or install it yourself as:
 
 Add the following to your `app/assets/javascripts/application.js`:
 
-	//= require admin-lte
+    //= require admin-lte
 	
+  
 ### Include adminlte-rails stylesheet assets
 
 Add the following to your `app/assets/stylesheets/application.css`:
 
+    *= require admin-lte
 
-  *= require admin-lte
      
 ### Note: 
 
@@ -47,7 +48,8 @@ Admin-lte depends upon bootstrap but does ship with it. So you need to include b
 Rake tasks supplied allow you update Adminlte version yourself. Run
 following to see list of commands available
 
-  $ bundle exec rake -T
+    $ bundle exec rake -T
+
 
 ## Version
 
