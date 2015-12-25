@@ -71,6 +71,7 @@ class SourceFile < Thor
 
     get "#{css_path}/AdminLTE.css", 'stylesheets/admin-lte.css'
     get "#{css_path}/skins/skin-purple.css", 'stylesheets/skin-purple.css'
+    get "#{css_path}/skins/skin-blue.css", 'stylesheets/skin-blue.css'
     
     # Get Plugins stylesheets
     plugins_path = "#{remote}/raw/#{tag}/plugins"    

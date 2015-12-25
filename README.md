@@ -30,6 +30,7 @@ Add the following to your `app/assets/javascripts/application.js`:
 
 Add the following to your `app/assets/stylesheets/application.css`:
 
+
   *= require admin-lte
      
 ### Note: 
@@ -41,6 +42,13 @@ Admin-lte depends upon bootstrap but does ship with it. So you need to include b
   * iCheck
   * dataTables
      
+## Updating version of Adminlte
+
+Rake tasks supplied allow you update Adminlte version yourself. Run
+following to see list of commands available
+
+  $ bundle exec rake -T
+
 ## Version
 
 2.3.2 (AdminLTE 2.3.2)
