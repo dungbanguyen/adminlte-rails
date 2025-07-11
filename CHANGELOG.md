@@ -1,3 +1,9 @@
+## 2.3.2
+
+Features:
+
+  - Updated assets to AdminLTE 2.3.2 release.
+
 ## 1.3.2
 
 Features:

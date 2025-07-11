@@ -27,7 +27,7 @@ Or install it yourself as:
 Add the following to your `app/assets/javascripts/application.js`:
 
 	//= require bootstrap.min
-	//= require admin-lte
+	//= require adminlte
 	
 ### Include adminlte-rails stylesheet assets
 
@@ -36,7 +36,7 @@ Add the following to your `app/assets/stylesheets/application.css`:
 	 *= require bootstrap
      *= require font-awesome
      *= require ionicons
-     *= require admin-lte
+     *= require adminlte
      
 If you want to use additional features, add more these lines to your `app/assets/stylesheets/application.css`:
 
@@ -45,7 +45,7 @@ If you want to use additional features, add more these lines to your `app/assets
      
 ## Version
 
-1.3.2 (AdminLTE 1.3.0)
+2.3.2 (AdminLTE 2.3.2)
 
 ## Changelog
 
