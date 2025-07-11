@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe AdminLTE::Rails::VERSION do
+RSpec.describe AdminLTE::Rails::VERSION do
   it 'is defined' do
     expect(AdminLTE::Rails::VERSION).not_to be_nil
   end

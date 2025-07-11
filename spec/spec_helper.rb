@@ -1,4 +1,3 @@
-require 'rspec'
 require 'adminlte-rails'
 
 RSpec.configure do |config|
