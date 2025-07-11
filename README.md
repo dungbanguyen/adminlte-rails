@@ -38,7 +38,7 @@ Add the following to your `app/assets/stylesheets/application.css`:
      *= require ionicons
      *= require admin-lte
      
-If you want to use additional features, add more these lines to your `app/assets/stylesheets/application.css`:
+If you want to use additional features, add these lines to your `app/assets/stylesheets/application.css`:
 
      *= require iCheck/all
      *= require datatables/dataTables.bootstrap
